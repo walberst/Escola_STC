@@ -1,0 +1,374 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:400,500|Open+Sans:400,600,700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#container {
+    max-width: 1364px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+#cabecalho {
+    width: 100%;
+    height: 90px;
+    background-color: #fff;
+    box-shadow: 0 2px 2px #555;
+    position: fixed;
+    z-index: 120;
+    top: 0;
+    left: 0;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+}
+
+#logo {
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+}
+
+#logo img {
+    width: 100%;
+    height: auto;
+}
+
+#menu {
+    width: 80%;
+    height: auto;
+    position: relative;
+}
+
+.tab-nav {
+    display: none;
+    outline: none;
+}
+
+.tab-nav-label {
+    display: none;
+}
+
+#navecacao {
+    width: 100%;
+    height: auto;
+}
+
+#corpo-menu {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+#corpo-menu li.pabx7 {
+    margin: 0 10px;
+}
+
+#corpo-menu li.pabx7 a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    position: relative;
+    transition: 0.4s;
+}
+
+#corpo-menu li.pabx7 a:hover {
+    color: #a1a39d;
+}
+
+#corpo-menu li.pabx7 a:before {
+    content: "";
+    width: 0px;
+    height: 3px;
+    background: #363432;
+    /*#dc802e;*/
+    position: absolute;
+    top: 100%;
+    left: 0;
+    transition: 0.5s;
+    mix-blend-mode: multiply;
+}
+
+#corpo-menu li.pabx7 a:after {
+    content: "";
+    width: 0px;
+    height: 3px;
+    background: #a1a39d;
+    /*#A7C84A;*/
+    position: absolute;
+    top: 100%;
+    right: 0;
+    transition: 0.5s;
+    mix-blend-mode: multiply;
+}
+
+#corpo-menu li.pabx7 a:hover:before {
+    width: 50%;
+    transform: translateX(100%);
+}
+
+#corpo-menu li.pabx7 a:hover:after {
+    width: 50%;
+    transform: translateX(-100%);
+}
+
+#redes-sociais {
+    width: 9%;
+    font-size: 28px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    right: 0;
+}
+
+#redes-sociais.pabx15 {
+    width: 20%;
+}
+
+#redes-sociais a {
+    text-decoration: none;
+}
+
+#redes-sociais i {
+    margin: 0 3px;
+}
+
+#redes-sociais i#facebook {
+    color: #4267B2;
+}
+
+#redes-sociais i#instagram {
+    color: #DB3A86;
+}
+
+.balao {
+    position: absolute;
+    top: 70px;
+    right: 0;
+    align-self: inherit;
+    padding: 5px;
+    margin-right: 2px;
+    border-radius: 7px;
+    background-color: rgba(0, 0, 0, 0.7);
+    transition: 0.4s;
+    display: none;
+}
+
+.balao p {
+    font-size: 15px;
+    color: #FFF
+}
+
+#corpo-pagina {
+    max-width: 1360px;
+    margin-top: 90px;
+}
+
+#rodape {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background-image: url("../_imagensT/fundo.jpg");
+    position: relative;
+    bottom: 0;
+    padding: 10px;
+    height: auto;
+}
+
+#rodape .pabx10 {
+    width: 33%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#rodape .pabx10 #logo {
+    width: 30%;
+    align-self: flex-start;
+}
+
+#rodape .pabx10 #desc-footer a {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    text-align: justify;
+    text-decoration: none;
+    color: #333;
+    display: block;
+    width: 95%;
+}
+
+#rodape #mapa-escola iframe {
+    width: 90%;
+    height: 250px;
+}
+
+#rodape #contact #title-contact h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 30px;
+    color: #363432;
+}
+
+#rodape #contact #infos-contact p {
+    margin: 10px 0;
+}
+
+#rodape #contact #infos-contact i {
+    color: #363432;
+    font-size: 20px;
+}
+
+#rodape #contact #infos-contact a {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 15px;
+    color: #333;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+#rodape #contact #infos-contact #redes-sociais {
+    position: relative;
+}
+
+#balaofc {
+    top: 230px;
+    right: 200px;
+}
+
+#balaoic {
+    top: 230px;
+    right: 170px;
+}
+
+
+/* medias screen */
+
+@media(max-width:974px) {
+    #corpo-menu {
+        display: none;
+        max-width: 250px;
+        max-height: 75vh;
+        position: fixed;
+        right: 12%;
+        top: 60px;
+        background-color: #fff;
+        transition: all ease-in-out 0.4s;
+        box-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5);
+    }
+    #corpo-menu li {
+        display: block;
+        padding: 5px 30px;
+        max-height: 20px;
+    }
+    .tab-nav-label {
+        position: absolute;
+        right: 5%;
+        display: flex;
+        top: 35%;
+        cursor: pointer;
+        color: #363432;
+        font-size: 25px;
+    }
+    #tab-nav:checked~#corpo-menu {
+        display: grid;
+    }
+}
+
+@media (max-width: 860px) {
+    #rodape {
+        padding: 0;
+    }
+}
+
+@media (max-width: 780px) {
+    #logo {
+        width: 20%;
+    }
+    #redes-sociais {
+        right: 2%;
+    }
+}
+
+@media (max-width: 670px) {
+    #rodape {
+        flex-direction: column;
+        padding: 10px;
+        justify-content: center;
+        align-items: center;
+    }
+    #rodape .pabx10 {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+@media(max-width:510px) {
+    #logo {
+        width: 25%;
+    }
+    #redes-sociais {
+        right: 5%;
+    }
+    #corpo-menu {
+        right: 18%;
+    }
+    .tab-nav-label {
+        right: 11%;
+    }
+}
+
+@media(max-width:430px) {
+    #logo {
+        width: 32%;
+    }
+    #corpo-menu {
+        right: 3%;
+        max-width: 380px;
+    }
+    .tab-nav-label {
+        right: 15%;
+    }
+}
+
+@media (max-height: 413px) {
+    #corpo-menu {
+        max-height: 78vh;
+        max-width: 100vw;
+        right: 0;
+        top: 75px;
+    }
+    #corpo-menu li {
+        width: 100%;
+    }
+}
+
+@media(max-width:340px) {
+    #logo {
+        width: 42%;
+    }
+    #redes-sociais {
+        right: 8%;
+    }
+    #corpo-menu {
+        right: 0%;
+    }
+    .tab-nav-label {
+        right: 25%;
+    }
+}
