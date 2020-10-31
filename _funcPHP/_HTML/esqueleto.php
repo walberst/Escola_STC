@@ -20,6 +20,7 @@ class esqueleto{
             "<meta name='author' content='Antonio Walber - antoniowalber3000@hotmail.com.br'>".
             "<meta name='viewport' content='width=device-width, initial-scale=1.0'>".
             "<meta http-equiv='X-UA-Compatible' content='ie=edge'>".
+            "<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>".
             "<link rel='shortcut icon' href='_midiasT/_imagensT/icon.ico' type='image/x-icon' />".
             $listaArquivos->listarCss().
             "<script>window.alert('Este é um site ficticio, usado na diciplina de projeto integrado IV - Anhanguera Vila Mariana 2020, Alunos Responsaveis: Antonio Walber Alves Dos Santos, Henrique Neto Aguiar, Carlos Alexandre Do Nascimento Silva');</script>".
@@ -32,6 +33,7 @@ class esqueleto{
             "</div>".
             $this->rodape().
         "</div>".
+        "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>".
         "</body>". 
         "</html>"
         ;
@@ -84,15 +86,25 @@ class esqueleto{
 
                     return $pg;
                 }elseif($url == "educacao-infantil" || $url == "ensino-fundamental"){
-                    $mosaico = "Pagina em construção";
+                    $ms = new mosaico();
+                    if($url == "educacao-infantil"){
+                        $mosaico = $ms->mosaic("infantil");
+                    }else{
+                        $mosaico = $ms->mosaic("fundamental");
+                    }
                     return $mosaico;
                 }elseif($url == "noticias" || $url == "projetos"){
-                    $cat = "Pagina em construção";
+                    $pgcat = new categorias();
+                    if($url == "noticias"){
+                        $cat = $pgcat->pgCat("noticias");
+                    }else{
+                        $cat = $pgcat->pgCat("projetos");
+                    }
                     return $cat;
                 }elseif($url== "contato"){
                     return "Pagina em construção";
                 }else{
-                    return "Pagina em construção";
+                    ;
                 }
             }
         }

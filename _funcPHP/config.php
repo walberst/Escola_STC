@@ -4,7 +4,7 @@ define("URLBASE", "http://localhost/projetointegrado/");
 
 # Relativo ao banco de dados
 define("HOST", "localhost"); 
-define("BANK", "escola_stc");
+define("BANK", "escola_tsc");
 define("USER", "root");
 define("PASS", "");
 

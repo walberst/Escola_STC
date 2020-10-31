@@ -88,7 +88,7 @@ class home{
                 $img = $categorias[$x]["caminho_midia"];
             }
             $listBox .= 
-            "<div class='box-categ' id='".$categoria."'>".
+            "<div class='box-categ' id='".$categoria.$x."'>".
                 "<a href='".strtolower($categorias[$x]["nome_categoria"])."/".$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>".
                     "<div class='img-categ'>".
                         "<img src='_midiasM/_imagensM/_w250/".$img."' alt='".$categorias[$x]["desc_postagens"]."'>".
