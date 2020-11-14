@@ -10,7 +10,7 @@ class categorias{
             $titulo = "Notícias";
         }else{
             $titulo = "Projetos";
-        }
+        } 
         
 
         
