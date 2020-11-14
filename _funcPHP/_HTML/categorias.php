@@ -7,25 +7,18 @@ class categorias{
         $ctm = new conteudoMidias();
 
         if($id == "noticias"){
-            $id = "Notícias";
+            $titulo = "Notícias";
         }else{
-            $id = "Projetos";
+            $titulo = "Projetos";
         }
         
-        if(isset($_POST["search"]) && $_POST["search"] != "" && $_POST["search"] != null):
-            
-            if($id == "Notícias"){
-                $ids = "noticias";
-            }else{
-                $ids = "projetos";
-            }
-            echo $ids;
-            $postagens = new conteudoPost();
-            $postagens = $postagens->search($_POST["search"], $ids);
-        endif;
+
         
         $listBox = "";
         for($x=0; $x < count($postagens); $x++){
+                if(stristr($_GET["search"], $postagens[$x]["titulo_postagens"]) === FALSE):
+                    var_dump($postagens[$x]["titulo_postagens"]);
+                endif;
 
             $imagens = explode(".", $postagens[$x]["caminho_midia"]);
             if(end($imagens) != "jpg"){
@@ -58,8 +51,8 @@ class categorias{
         $cat = 
         "<section id='' class=''>".
             "<div class=''>".
-                "<h2>".ucfirst($id)."</h2>".
-                "<form action='' method='POST'>".
+                "<h2>".ucfirst($titulo)."</h2>".
+                "<form action='' method='GET'>".
                     "<input type='search' id='search' name='search' placehold='Pesquisar...'>".
                     "<input type='submit' value='Pesquisar' id='buscar'>".
                     "<ul class='achados'></ul>".

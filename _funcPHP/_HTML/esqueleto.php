@@ -13,10 +13,10 @@ class esqueleto{
         "<!DOCTYPE html5>".
         "<html lang = 'pt-br'>".
         "<head>".
-            "<title>Escola TSC | ".$this->conteudoPag["titulo_postagens"]."</title>".
+            "<title>Escola TSC | ".@$this->conteudoPag["titulo_postagens"]."</title>".
             "<meta charset = 'UTF-8'/>".
-            "<meta name='description' content='".$this->conteudoPag["desc_postagens"]."'>".
-            "<meta name='keywords' content='".$this->conteudoPag["tags_postagens"]."'>".
+            "<meta name='description' content='".@$this->conteudoPag["desc_postagens"]."'>".
+            "<meta name='keywords' content='".@$this->conteudoPag["tags_postagens"]."'>".
             "<meta name='author' content='Antonio Walber - antoniowalber3000@hotmail.com.br'>".
             "<meta name='viewport' content='width=device-width, initial-scale=1.0'>".
             "<meta http-equiv='X-UA-Compatible' content='ie=edge'>".
@@ -85,7 +85,8 @@ class esqueleto{
                     $pg .= $home->noticiasRecentes("projetos");
 
                     return $pg;
-                }elseif($url == "educacao-infantil" || $url == "ensino-fundamental"){
+
+                }if($url == "educacao-infantil" || $url == "ensino-fundamental"){
                     $ms = new mosaico();
                     if($url == "educacao-infantil"){
                         $mosaico = $ms->mosaic("infantil");
@@ -97,6 +98,8 @@ class esqueleto{
                     $pgcat = new categorias();
                     if($url == "noticias"){
                         $cat = $pgcat->pgCat("noticias");
+
+                        return $cat;
                     }else{
                         $cat = $pgcat->pgCat("projetos");
                     }

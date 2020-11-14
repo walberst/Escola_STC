@@ -33,7 +33,7 @@ class conteudoMenu extends conexaoBD{
         $res = $this->getItensMenu();
         for($x = 0; $x < count($res); $x++){
             $descLink = $this->getDescMenu($res[$x][2]);
-            $descLink = substr($descLink[0], 0, 200);
+            @$descLink = substr($descLink[0], 0, 200);
             $res[$x] = "<li id='itens-menu-".$x."' class='pabx7'><a href='".$res[$x][2]."' alt='".$descLink."'>".$res[$x][1]."</a></li>";
         }
         return $res = implode("",$res);

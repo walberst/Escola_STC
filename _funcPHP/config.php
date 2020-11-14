@@ -1,6 +1,6 @@
 <?php
 
-define("URLBASE", "http://localhost/projetointegrado/");
+define("URLBASE", "http://localhost/Escola_STC/");
 
 # Relativo ao banco de dados
 define("HOST", "localhost"); 
