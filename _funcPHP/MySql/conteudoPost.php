@@ -45,10 +45,9 @@ class conteudoPost extends conexaoBD {
     
     public function search($pesquisa, $id){
         try{
-            $posts = filter_input(INPUT_POST, $pesquisa, FILTER_SANITIZE_STRING);
-            $sql = "select postagens.*, midias.caminho_midia FROM postagens inner join postagens_midias on postagens.id_postagens = postagens_midias.fk_postagens inner join midias on midias.id_midias = postagens_midias.fk_midias INNER join categoria on categoria.id_categoria = postagens.categ_postagens where postagens.titulo_postagens LIKE \"%:posts%\"  and nome_categoria = \":id\";";
+            $sql = "select distinct postagens.*, midias.caminho_midia FROM postagens inner join postagens_midias on postagens.id_postagens = postagens_midias.fk_postagens inner join midias on midias.id_midias = postagens_midias.fk_midias INNER join categoria on categoria.id_categoria = postagens.categ_postagens where postagens.titulo_postagens LIKE :posts and nome_categoria = :id;";
             $letsGo = $this->conect->prepare($sql);
-            $letsGo->bindValue(":posts",$posts);
+            $letsGo->bindValue(":posts","%".$pesquisa."%");
             $letsGo->bindValue(":id",$id);
             $letsGo->execute();
             return $letsGo->fetchAll(PDO::FETCH_ASSOC);

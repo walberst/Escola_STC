@@ -23,7 +23,6 @@ class esqueleto{
             "<link rel='stylesheet' href='https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css'>".
             "<link rel='shortcut icon' href='_midiasT/_imagensT/icon.ico' type='image/x-icon' />".
             $listaArquivos->listarCss().
-            "<script>window.alert('Este é um site ficticio, usado na diciplina de projeto integrado IV - Anhanguera Vila Mariana 2020, Alunos Responsaveis: Antonio Walber Alves Dos Santos, Henrique Neto Aguiar, Carlos Alexandre Do Nascimento Silva');</script>".
         "</head>".
         "<body>".
         "<div id='container' class='pabx1'>".
@@ -33,7 +32,6 @@ class esqueleto{
             "</div>".
             $this->rodape().
         "</div>".
-        "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>".
         "</body>". 
         "</html>"
         ;
