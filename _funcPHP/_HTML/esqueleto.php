@@ -76,7 +76,7 @@ class esqueleto{
                     $pg = "";
                     $home = new home();
                     $pg .= $home->videoApresentacao();
-                    $pg .= $home->mosaico();
+                    $pg .= $home->mosaico("mosaico-ph");
                     $pg .= $home->descricaoVideo("sobre","descPrimeira","Escola","TSC");
                     $pg .= $home->noticiasRecentes("noticias");
                     $pg .= $home->descricaoVideo("ingles","descIngles","Programa","Bilíngue");

@@ -14,9 +14,9 @@ class home{
         return $videoApresentacao;
     }
 
-    public function mosaico(){
+    public function mosaico($id_mosaico){
         $itens = new conteudoTemplate();
-        $res = $itens->getMosaic("mosaico-ph");
+        $res = $itens->getMosaic($id_mosaico);
         $mosaicItens = "";
 
         for($x=0;$x<count($res);$x++){
