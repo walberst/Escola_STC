@@ -25,8 +25,12 @@ class categorias{
         for($x=0; $x < count($postagens); $x++){
 
             $imagens = explode(".", $postagens[$x]["caminho_midia"]);
-            if(end($imagens) != "jpg"){
-                $postagens[$x]["caminho_midia"] = $imagens[0].".jpg";
+            if($postagens[$x]["caminho_midia"] <> ""){
+                if(end($imagens) != "jpg"){
+                    $postagens[$x]["caminho_midia"] = $imagens[0].".jpg";
+                }
+            }else{
+                $postagens[$x]["caminho_midia"] = "sem_img.jpg";
             }
 
             if($postagens[$x]["capa_post"] != ""){
@@ -44,28 +48,25 @@ class categorias{
                     "</div>".
                     "<div class='desc-categ'>".
                         "<h4>".@$postagens[$x]["titulo_postagens"]."</h4>".
-                        "<p>".mb_strimwidth($postagens[$x]["desc_postagens"],0,350, "...")."</p>".
+                        "<p>".mb_strimwidth($postagens[$x]["desc_postagens"],0,200, "...")."</p>".
                     "</div>".
                     "<p class='data-post'><i class='flaticon-calendar'></i>".date("d/m/Y",strtotime(@$postagens[$x]["data_criacao_postagens"]))."</p>".
                     "<a class = 'leia-mais' href='".strtolower(@$postagens[$x]["nome_categoria"])."/".@$postagens[$x]["url_postagens"]."' alt='".@$postagens[$x]["desc_postagens"]."'>Leia mais...</a>".
                 "</a>".
             "</div>";
         }
-        
+
         $cat = 
-        "<section id='' class=''>".
-            "<div class=''>".
-                "<h2>".ucfirst($titulo)."</h2>".
+        "<section id='categorias' class='sec-4'>".
+            "<div class='titulo'>".
+                "<h3 class='tituloPagina'>".ucfirst($titulo)."</h3>".
                 "<form action='' method='get'>".
-                    "<input type='search' id='search' name='s' placehold='Pesquisar...'>".
-                    "<input type='submit' value='Pesquisar' id='buscar'>".
-                    "<ul class='achados'></ul>".
+                    "<input type='text' id='search' name='s' placeholder='Pesquisar...'>".
+                    "<button><i class='flaticon-magnifier'></i></button>".
                 "</form>".
             "</div>".
-            "<div class=''>".
-                "<div class='container'>".
-                    $listBox.
-                "</div>".
+            "<div class='list-box'>".
+                $listBox.
             "</div>".
         "</section>";
         return $cat;

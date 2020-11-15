@@ -1,0 +1,169 @@
+.sec-4 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    padding: 30px 0;
+    min-height: calc(100vh - 90px);
+    background-color: #A1A39D;
+}
+
+#categorias .titulo{
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    position: relative;
+}
+
+#categorias .titulo form{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%,-50%);
+}
+
+#categorias .titulo form input[name="s"]{
+    width: 300px;
+    height: 35px;
+    z-index: 99999;
+    border: #2c2e2ae8 1px solid;
+    padding: 0 10px;
+    font-size: 18px;
+}
+
+#categorias .titulo form button{
+    height: 35px;
+    width: 35px;
+    margin-left: 5px;
+    font-size: 30px;
+    border: none;
+    background: transparent;
+    position: relative;
+    right: 40px;
+    top: 7px;
+    cursor: pointer;
+    color: #2c2e2ac4;
+}
+#categorias .titulo form input[name="s"]::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    font-size: 18px;
+    text-align: center;
+}
+
+#categorias .titulo form input[name="s"]:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+    font-size: 18px;
+    text-align: center;
+}
+
+#categorias .titulo form input[name="s"]::-moz-placeholder { /* Mozilla Firefox 19+ */
+    font-size: 18px;
+    text-align: center;
+}
+
+#categorias .titulo form input[name="s"]:-ms-input-placeholder { /* Internet Explorer 10-11 */
+    font-size: 18px;
+    text-align: center;
+}
+
+#categorias .titulo form input[name="s"]::-ms-input-placeholder { /* Microsoft Edge */
+    font-size: 18px;
+    text-align: center;
+}
+
+#categorias .titulo h3.tituloPagina {
+    display: block;
+    width: 95%;
+    font-size: 30px;
+    margin:0 auto;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 3vw;
+    color: #fff;
+}
+
+#categorias .titulo h3.tituloPagina:after {
+    content: "";
+    width: 100%;
+    height: 3px;
+    background: #fff;
+    display: block;
+}
+
+.sec-4 .list-box {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-rows: minmax(100px, auto);
+    grid-auto-flow: dense;
+    grid-gap: 15px;
+    row-gap: 35px;
+    height: 100%;
+    padding: 0 20px;
+    margin-bottom: 30px;
+}
+
+.sec-4 .list-box .box-categ {
+    background-color: #2c2e2a;
+    color: #fff;
+    margin: 0 auto;
+    border-radius: 5px;
+    padding: 10px;
+    height: 100%;
+    position: relative;
+    top: 20px;
+    transition: 0.4s;
+}
+
+.sec-4 .list-box .box-categ a {
+    display: block;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    color: #e4e4e4;
+    text-align: justify;
+}
+
+.sec-4 .list-box .box-categ .img-categ {
+    max-width: 250px;
+    max-height: 320px;
+    margin: 20px 0;
+}
+
+.sec-4 .list-box .box-categ .img-categ img {
+    max-width: inherit;
+    max-height: inherit;
+}
+
+.sec-4 .list-box .box-categ h4 {
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Montserrat', sans-serif;
+    color: #fff;
+}
+
+.sec-4 .list-box .box-categ p {
+    font-size: 15px;
+    font-family: 'Open Sans', sans-serif;
+    color: #fff;
+}
+
+.sec-4 .list-box .box-categ a.leia-mais {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+.data-post {
+    display: block;
+    padding: 5px;
+    margin-top: 10px;
+    color: #e4e4e4;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+}
+
+.data-post i {
+    margin-right: 5px;
+}

@@ -13,7 +13,7 @@ class esqueleto{
         "<!DOCTYPE html5>".
         "<html lang = 'pt-br'>".
         "<head>".
-            "<title>Escola TSC | ".@$this->conteudoPag["titulo_postagens"]."</title>".
+            "<title>Escola TSC | ".ucfirst(@$this->conteudoPag["titulo_postagens"])."</title>".
             "<meta charset = 'UTF-8'/>".
             "<meta name='description' content='".@$this->conteudoPag["desc_postagens"]."'>".
             "<meta name='keywords' content='".@$this->conteudoPag["tags_postagens"]."'>".
