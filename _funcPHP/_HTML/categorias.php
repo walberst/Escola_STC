@@ -61,7 +61,7 @@ class categorias{
             "<div class='titulo'>".
                 "<h3 class='tituloPagina'>".ucfirst($titulo)."</h3>".
                 "<form action='' method='get'>".
-                    "<input type='text' id='search' name='s' placeholder='Pesquisar...'>".
+                    "<input type='text' id='search' name='s' autocomplete='off' placeholder='Pesquisar...'>".
                     "<button><i class='flaticon-magnifier'></i></button>".
                 "</form>".
             "</div>".
