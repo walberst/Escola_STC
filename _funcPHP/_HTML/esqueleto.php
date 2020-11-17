@@ -40,10 +40,18 @@ class esqueleto{
     
     private function cabecalho(){
         $contMenu = new conteudoMenu();
+        $url = strip_tags(trim(filter_input(INPUT_GET, "page", FILTER_DEFAULT)));
+        $urlq = explode("/", $url);
+        $ba = "";
+        if(count($urlq)>1){
+            for($x=0;$x<count($urlq)-1;$x++){
+                $ba .= "../";
+            }
+        }
         $cabecalho = 
         "<header id='cabecalho' class='pabx2'>".
             "<div id='logo' class='pabx3'>".
-                "<a href='".URLBASE."' alt='pagina inicial do site'><img src='_midiasT/_imagensT/logo.svg' alt='logotipo escola primeira'/></a>".
+                "<a href='".URLBASE."' alt='pagina inicial do site'><img src='".$ba."_midiasT/_imagensT/logo.svg' alt='logotipo escola tsc'/></a>".
             "</div>".
             "<div id='menu' class='pabx4'>".
                 "<nav id='navegacao' class='pabx5'>".
@@ -115,11 +123,19 @@ class esqueleto{
 
     private function rodape(){
         $contFooter = new conteudoFooter();
+        $url = strip_tags(trim(filter_input(INPUT_GET, "page", FILTER_DEFAULT)));
+        $urlq = explode("/", $url);
+        $ba = "";
+        if(count($urlq)>1){
+            for($x=0;$x<count($urlq)-1;$x++){
+                $ba .= "../";
+            }
+        }
         $rodape = 
         "<footer id='rodape' class='pabx9'>".
             "<div class='pabx10'>".
                 "<div id='logo' class='pabx11'>".
-                    "<a href='".URLBASE."' alt='Pagina inicial do site'><img src='_midiasT/_imagensT/logo.svg' alt='logotipo escola primeira'/></a>".
+                    "<a href='".URLBASE."' alt='Pagina inicial do site'><img src='".$ba."_midiasT/_imagensT/logo.svg' alt='logotipo escola tsc'/></a>".
                 "</div>".
                 "<div class='pabx12' id='desc-footer'>".
                    "<a href='a-escola-primeira' alt='".$contFooter->descFooter()."'>" .$contFooter->descFooter(). "</a>".
