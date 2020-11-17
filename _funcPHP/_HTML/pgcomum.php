@@ -17,6 +17,11 @@ class pgcomum
             "<section class='pgc'>" .
                 "<div class='titulo'>" .
                     "<h3 class='tituloPagina'>" . ucfirst($conteudo['titulo_postagens']) . "</h3>" .
+                    "<div class='gl'>".
+                        "<button class='gallery'>".
+                            "<i class='flaticon-image-gallery'></i>".
+                        "</button>".
+                    "</div>".
                 "</div>" .
                 "<div class='contentpg'>".
                     $conteudo['conteudo_postagens'].
