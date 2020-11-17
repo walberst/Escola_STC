@@ -33,7 +33,7 @@ class listarArquivos{
                             $res[$x] = "<link rel='stylesheet' type='text/css' href='_css/".$listagem[$x]."'/>";
                         }
                     }else{
-                        if($arq[0] == "pgc"){
+                        if($arq[0] == "pgcomum"){
                             $res[$x] = "<link rel='stylesheet' type='text/css' href='_css/".$listagem[$x]."'/>";
                         }
                     }

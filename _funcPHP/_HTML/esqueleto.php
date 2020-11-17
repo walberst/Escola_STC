@@ -69,7 +69,7 @@ class esqueleto{
         $url = strip_tags(trim(filter_input(INPUT_GET, "page", FILTER_DEFAULT)));
         $url = $url == "" ? "home" : $url;
         if($this->conteudoPag == null){
-            return "Pagina em construção";
+            return "Erro 404";
         }else{
             if($this->conteudoPag["url_postagens"] == $url){
                 if($url == "home"){
@@ -105,7 +105,8 @@ class esqueleto{
                 }elseif($url== "contato"){
                     return "Pagina em construção";
                 }else{
-                    ;
+                    $pgc = new pgcomum();
+                    return $pgc->renderPg();
                 }
             }
         }
