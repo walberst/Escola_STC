@@ -1,6 +1,6 @@
     /*
     Flaticon icon font: Flaticon
-    Creation date: 08/08/2019 16:15
+    Creation date: 17/11/2020 01:18
     */
 
     @font-face {
@@ -37,24 +37,26 @@
   font-smoothing: antialiased;
     }
 
-    .flaticon-magnifier:before { content: "\f100"; }
-.flaticon-facebook-logo-button:before { content: "\f101"; }
+    .flaticon-loupe:before { content: "\f100"; }
+.flaticon-facebook:before { content: "\f101"; }
 .flaticon-instagram:before { content: "\f102"; }
 .flaticon-menu-button-of-three-horizontal-lines:before { content: "\f103"; }
 .flaticon-whatsapp:before { content: "\f104"; }
-.flaticon-telephone:before { content: "\f105"; }
-.flaticon-old-typical-phone:before { content: "\f106"; }
-.flaticon-close-envelope:before { content: "\f107"; }
-.flaticon-calendar:before { content: "\f108"; }
-.flaticon-placeholder-black-shape-for-localization-on-maps:before { content: "\f109"; }
+.flaticon-old-typical-phone:before { content: "\f105"; }
+.flaticon-phone-call:before { content: "\f106"; }
+.flaticon-mail-closed-envelope-back:before { content: "\f107"; }
+.flaticon-tool:before { content: "\f108"; }
+.flaticon-calendar:before { content: "\f109"; }
+.flaticon-image-gallery:before { content: "\f10a"; }
     
-    $font-Flaticon-magnifier: "\f100";
-    $font-Flaticon-facebook-logo-button: "\f101";
+    $font-Flaticon-loupe: "\f100";
+    $font-Flaticon-facebook: "\f101";
     $font-Flaticon-instagram: "\f102";
     $font-Flaticon-menu-button-of-three-horizontal-lines: "\f103";
     $font-Flaticon-whatsapp: "\f104";
-    $font-Flaticon-telephone: "\f105";
-    $font-Flaticon-old-typical-phone: "\f106";
-    $font-Flaticon-close-envelope: "\f107";
-    $font-Flaticon-calendar: "\f108";
-    $font-Flaticon-placeholder-black-shape-for-localization-on-maps: "\f109";
+    $font-Flaticon-old-typical-phone: "\f105";
+    $font-Flaticon-phone-call: "\f106";
+    $font-Flaticon-mail-closed-envelope-back: "\f107";
+    $font-Flaticon-tool: "\f108";
+    $font-Flaticon-calendar: "\f109";
+    $font-Flaticon-image-gallery: "\f10a";

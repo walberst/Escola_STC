@@ -55,7 +55,7 @@ class esqueleto{
                 "</nav>".
             "</div>".
             "<div id='redes-sociais' class='pabx8'>".
-                "<a href='https://pt-br.facebook.com/' onmousemove=\"document.getElementById('balaof').style.display='block'\" onmouseout=\"document.getElementById('balaof').style.display='none'\" target='_blank' rel='noopener noreferrer' class='linkSocial'><i class='flaticon-facebook-logo-button socialMedia' id='facebook'></i></a>".
+                "<a href='https://pt-br.facebook.com/' onmousemove=\"document.getElementById('balaof').style.display='block'\" onmouseout=\"document.getElementById('balaof').style.display='none'\" target='_blank' rel='noopener noreferrer' class='linkSocial'><i class='flaticon-facebook socialMedia' id='facebook'></i></a>".
                 "<a href='https://www.instagram.com/' onmousemove=\"document.getElementById('balaoi').style.display='block'\" onmouseout=\"document.getElementById('balaoi').style.display='none'\" target='_blank' rel='noopener noreferrer' class='linkSocial'><i class='flaticon-instagram socialMedia' id='instagram'></i></a>".
                 "<div id='balaof' class='balao'><p>fb/escolatsc</p></div>".
                 "<div id='balaoi' class='balao'><p>@escolatsc</p></div>".
@@ -133,12 +133,12 @@ class esqueleto{
                     "<h1>Contato</h1>".
                 "</div>".
                 "<div class='pabx15' id='infos-contact'>".
-                    "<p><i class='flaticon-placeholder-black-shape-for-localization-on-maps'></i><a target='_blank' rel='noopener noreferrer' href='https://goo.gl/maps/AhcGYK8L1g5hPTFk7'> Rua dos bobos, 0 | São Paulo - SP</a></p>".
-                    "<p><i class='flaticon-telephone'></i><a href='tel:1138424500'> (11) 4002-8922</a></p>".
-                    "<p><i class='flaticon-close-envelope'></i><a href='mailto:contato@escolatsc.com.br'> contato@escolatsc.com.br</a></p>".
+                    "<p><i class='flaticon-tool'></i><a target='_blank' rel='noopener noreferrer' href='https://goo.gl/maps/AhcGYK8L1g5hPTFk7'> Rua dos bobos, 0 | São Paulo - SP</a></p>".
+                    "<p><i class='flaticon-phone-call'></i><a href='tel:1138424500'> (11) 4002-8922</a></p>".
+                    "<p><i class='flaticon-mail-closed-envelope-back'></i><a href='mailto:contato@escolatsc.com.br'> contato@escolatsc.com.br</a></p>".
                 "</div>".
                 "<div class='pabx15' id='redes-sociais'>".
-                    "<a href='https://pt-br.facebook.com/' target='_blank' rel='noopener noreferrer' class='linkSocial'><i class='flaticon-facebook-logo-button socialMedia' id='facebook'></i></a>".
+                    "<a href='https://pt-br.facebook.com/' target='_blank' rel='noopener noreferrer' class='linkSocial'><i class='flaticon-facebook socialMedia' id='facebook'></i></a>".
                     "<a href='https://www.instagram.com/'  target='_blank' rel='noopener noreferrer' class='linkSocial'><i class='flaticon-instagram socialMedia' id='instagram'></i></a>".
                     "<div id='balaofc' class='balao'><p>fb/escola.primeira</p></div>".
                     "<div id='balaoic' class='balao'><p>@escolaprimeira</p></div>".
