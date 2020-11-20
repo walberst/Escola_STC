@@ -42,7 +42,7 @@ class categorias{
             
             $listBox .= 
             "<div class='box-categ' id='".$id.$x."'>".
-                "<a href='".strtolower(@$postagens[$x]["nome_categoria"])."/".@$postagens[$x]["url_postagens"]."' alt='".@$postagens[$x]["desc_postagens"]."'>".
+                "<a href='".URLBASE.@$postagens[$x]["url_postagens"]."' alt='".@$postagens[$x]["desc_postagens"]."'>".
                     "<div class='img-categ'>".
                         "<img src='_midiasM/_imagensM/_w250/".$img."' alt='".@$postagens[$x]["desc_postagens"]."'>".
                     "</div>".
@@ -51,7 +51,7 @@ class categorias{
                         "<p>".mb_strimwidth($postagens[$x]["desc_postagens"],0,200, "...")."</p>".
                     "</div>".
                     "<p class='data-post'><i class='flaticon-calendar'></i>".date("d/m/Y",strtotime(@$postagens[$x]["data_criacao_postagens"]))."</p>".
-                    "<a class = 'leia-mais' href='".strtolower(@$postagens[$x]["nome_categoria"])."/".@$postagens[$x]["url_postagens"]."' alt='".@$postagens[$x]["desc_postagens"]."'>Leia mais...</a>".
+                    "<a class = 'leia-mais' href='".URLBASE.strtolower(@$postagens[$x]["nome_categoria"])."/".@$postagens[$x]["url_postagens"]."' alt='".@$postagens[$x]["desc_postagens"]."'>Leia mais...</a>".
                 "</a>".
             "</div>";
         }

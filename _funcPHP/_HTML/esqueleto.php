@@ -138,7 +138,7 @@ class esqueleto{
                     "<a href='".URLBASE."' alt='Pagina inicial do site'><img src='".$ba."_midiasT/_imagensT/logo.svg' alt='logotipo escola tsc'/></a>".
                 "</div>".
                 "<div class='pabx12' id='desc-footer'>".
-                   "<a href='a-escola-primeira' alt='".$contFooter->descFooter()."'>" .$contFooter->descFooter(). "</a>".
+                   "<a href='".URLBASE."a-escola-primeira' alt='".$contFooter->descFooter()."'>" .$contFooter->descFooter(). "</a>".
                 "</div>".
             "</div>".
             "<div class='pabx10' id='mapa-escola'>".

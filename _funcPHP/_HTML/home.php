@@ -62,7 +62,7 @@ class home{
                 "<div class='caixa'>".
                     "<h2>".$t1." <span>".$t2."</span></h2>".
                     "<p>".$desc["desc_postagens"]."</p>".
-                    "<a class='vt' href='".$link."' alt='".$desc["desc_postagens"]."'>Leia Mais...</a>".
+                    "<a class='vt' href='".URLBASE.$link."' alt='".$desc["desc_postagens"]."'>Leia Mais...</a>".
                 "</div>".
             "</section>";
         return $secDesc;
@@ -89,7 +89,7 @@ class home{
             }
             $listBox .= 
             "<div class='box-categ' id='".$categoria.$x."'>".
-                "<a href='".strtolower($categorias[$x]["nome_categoria"])."/".$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>".
+                "<a href='".URLBASE.strtolower($categorias[$x]["nome_categoria"])."/".$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>".
                     "<div class='img-categ'>".
                         "<img src='_midiasM/_imagensM/_w250/".$img."' alt='".$categorias[$x]["desc_postagens"]."'>".
                     "</div>".
@@ -98,7 +98,7 @@ class home{
                         "<p>".mb_strimwidth($categorias[$x]["desc_postagens"],0,350, "...")."</p>".
                     "</div>".
                     "<p class='data-post'><i class='flaticon-calendar'></i>".date("d/m/Y",strtotime($categorias[$x]["data_criacao_postagens"]))."</p>".
-                    "<a class = 'leia-mais' href='".strtolower($categorias[$x]["nome_categoria"])."/".$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>Leia mais...</a>".
+                    "<a class = 'leia-mais' href='".URLBASE.strtolower($categorias[$x]["nome_categoria"])."/".$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>Leia mais...</a>".
                 "</a>".
             "</div>";
         }
@@ -112,7 +112,7 @@ class home{
             "<h3 class='titulo-sec'>".$ttctg."</h3>".
             "<div class='list-box'>".$listBox."</div>".
             "<div class='dv'>".
-                "<a class='vt' href='".$categoria."' alt='Você será levado a página com todos os itens'>Ver todos...</a>".
+                "<a class='vt' href='".URLBASE.$categoria."' alt='Você será levado a página com todos os itens'>Ver todos...</a>".
             "</div>".
         "</section>";
 
