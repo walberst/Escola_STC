@@ -111,7 +111,8 @@ class esqueleto{
                     }
                     return $cat;
                 }elseif($url== "contato"){
-                    return "Pagina em construção";
+                    $ct = new contato();
+                    return $ct->contact();
                 }else{
                     $pgc = new pgcomum();
                     return $pgc->renderPg();
@@ -150,7 +151,7 @@ class esqueleto{
                 "</div>".
                 "<div class='pabx15' id='infos-contact'>".
                     "<p><i class='flaticon-tool'></i><a target='_blank' rel='noopener noreferrer' href='https://goo.gl/maps/AhcGYK8L1g5hPTFk7'> Rua dos bobos, 0 | São Paulo - SP</a></p>".
-                    "<p><i class='flaticon-phone-call'></i><a href='tel:1138424500'> (11) 4002-8922</a></p>".
+                    "<p><i class='flaticon-phone-call'></i><a href='tel:1140028922'> (11) 4002-8922</a></p>".
                     "<p><i class='flaticon-mail-closed-envelope-back'></i><a href='mailto:contato@escolatsc.com.br'> contato@escolatsc.com.br</a></p>".
                 "</div>".
                 "<div class='pabx15' id='redes-sociais'>".
