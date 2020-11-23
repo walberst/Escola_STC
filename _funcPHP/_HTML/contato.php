@@ -27,7 +27,7 @@ class contato{
                         "<textarea id='msg' name='msg'></textarea>".
                     "</div>".
                     "<div id='btn'>".
-                        "<button>ENVIAR...</button>".
+                        "<button id='btn-envia'>ENVIAR...</button>".
                     "</div>".
                 "</form>".
             "</div>".
@@ -53,7 +53,29 @@ class contato{
                     "<span>Seg - Sex : 8h às 17h</span>".
                 "</div>".
             "</div>".
-        "</section>";
+        "</section>".
+        "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>".
+        "<script>".
+            "$('#btn-envia').click(function(args){".
+                "args.preventDefault();".
+                "$.ajax({".
+                    "method: 'post',".
+                    "dataType: 'json',".
+                    "url: '".URLBASE."_funcPHP/_Ajax/sendMail.php',".
+                    "data:{".
+                        "nome: $('#name').val(),".
+                        "email: $('#mail').val(),".
+                        "fone: $('#fone').val(),".
+                        "assunto: $('#ass').val(),".
+                        "msg: $('#msg').val(),".
+                    "},". 
+                    "sucess: function(data){".
+                        "let res = JSON.parse(data);".
+                        "if(res[0] == 'true'){alert('Mensagem enviada com sucesso')}".
+                    "}".   
+                "})".
+            "});".
+        "</script>";
         return $contato;
     }
 

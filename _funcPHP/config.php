@@ -10,7 +10,7 @@ define("PASS", "");
 
 # Auto carregar classes
 function autoLoadClasses($class) {
-    $baseDiretorios = ['MySql', "_HTML"];
+    $baseDiretorios = ['MySql', "_HTML", "_Ajax", "phpMailer"];
     $analise = null;
 
     foreach ($baseDiretorios as $nomeDiretorio):
