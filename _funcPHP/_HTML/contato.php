@@ -56,6 +56,10 @@ class contato{
         "</section>".
         "<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>".
         "<script>".
+            "function enviou(){".
+                "alert('Mensagem enviada com sucesso');".
+                "$('form')[0].reset();".
+            "}".
             "$('#btn-envia').click(function(args){".
                 "args.preventDefault();".
                 "$.ajax({".
@@ -69,10 +73,7 @@ class contato{
                         "assunto: $('#ass').val(),".
                         "msg: $('#msg').val(),".
                     "},". 
-                    "sucess: function(data){".
-                        "let res = JSON.parse(data);".
-                        "if(res[0] == 'true'){alert('Mensagem enviada com sucesso')}".
-                    "}".   
+                    "sucess: enviou()".   
                 "})".
             "});".
         "</script>";
