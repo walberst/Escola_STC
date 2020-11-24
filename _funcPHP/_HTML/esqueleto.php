@@ -110,9 +110,31 @@ class esqueleto{
                         $cat = $pgcat->pgCat("projetos");
                     }
                     return $cat;
-                }elseif($url== "contato"){
+                }elseif($url == "contato"){
                     $ct = new contato();
                     return $ct->contact();
+                }elseif($url == "admin"){
+
+                    $user = new conteudoUser();
+                    $adm = new adm();
+                    if(isset($_SESSION['usr_logado'])){
+                        if(base64_decode($_SESSION['usr_logado']) == 'logado'){
+                            if(isset($_SESSION['user']) && isset($_SESSION['pass'])){
+                                if($user->verificaLogin($_SESSION['user'],$_SESSION['pass'])){
+                                    return $adm->admin();
+                                }else{
+                                    return $adm->login();
+                                }
+                            }else{
+                                return $adm->login();
+                            }
+                        }else{
+                            return $adm->login();
+                        }
+                    }else{
+                        return $adm->login();
+                    }
+
                 }else{
                     $pgc = new pgcomum();
                     return $pgc->renderPg();

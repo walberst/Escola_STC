@@ -40,6 +40,10 @@ class listarArquivos{
                         if($arq[0] == "contato"){
                             $res[$x] = "<link rel='stylesheet' type='text/css' href='".$base."_css/".$listagem[$x]."'/>";
                         }
+                    }elseif($url== "admin"){
+                        if($arq[0] == "admin"){
+                            $res[$x] = "<link rel='stylesheet' type='text/css' href='".$base."_css/".$listagem[$x]."'/>";
+                        }
                     }else{
                         if($arq[0] == "pgcomum"){
                             $res[$x] = "<link rel='stylesheet' type='text/css' href='".$base."_css/".$listagem[$x]."'/>";
