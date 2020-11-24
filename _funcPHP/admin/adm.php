@@ -5,7 +5,7 @@ class adm{
         return $pagAdm;
     }
 
-    public function login(){
+    public function login(){ 
         $pagLogin = 
             "<section id='login'>".
                 "<form action='' method='post'>".
