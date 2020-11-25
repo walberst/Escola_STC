@@ -9,16 +9,16 @@ class adm{
         $postProjetos = "";
 
         for($x = 0; $x < count($noticias); $x++){
-            $postNoticias .= "<tr><td class='tdid'>".$noticias[$x]['id_postagens']."</td><td class='tdtt'>".$noticias[$x]['titulo_postagens']."</td><td class='tddt'>".date("d/m/Y",strtotime($noticias[$x]['data_criacao_postagens']))."</td><td class='btn mn'><button>Alterar</button></td><td class='btn mn'><button value='".$noticias[$x]['id_postagens']."' class='excluir' onclick='excluir(".$noticias[$x]['id_postagens'].")'>Excluir</button></td></tr>";
+            $postNoticias .= "<tr><td class='tdid'>".$noticias[$x]['id_postagens']."</td><td class='tdtt'>".$noticias[$x]['titulo_postagens']."</td><td class='tddt'>".date("d/m/Y",strtotime($noticias[$x]['data_criacao_postagens']))."</td><td class='btn mn'><button value='".$noticias[$x]['id_postagens']."' class='alterar'>Alterar</button></td><td class='btn mn'><button value='".$noticias[$x]['id_postagens']."' class='excluir'>Excluir</button></td></tr>";
         }
 
         for($y = 0; $y < count($postagens); $y++){
-            $postProjetos .= "<tr><td class='tdid'>".$postagens[$y]['id_postagens']."</td><td class='tdtt'>".$postagens[$y]['titulo_postagens']."</td><td class='tddt'>".date("d/m/Y",strtotime($postagens[$y]['data_criacao_postagens']))."</td><td class='btn mn'><button>Alterar</button></td><td class='btn mn'><button value='".$postagens[$y]['id_postagens']."' class='excluir' onclick='excluir(".$postagens[$y]['id_postagens'].")'>Excluir</button></td></tr>";
+            $postProjetos .= "<tr><td class='tdid'>".$postagens[$y]['id_postagens']."</td><td class='tdtt'>".$postagens[$y]['titulo_postagens']."</td><td class='tddt'>".date("d/m/Y",strtotime($postagens[$y]['data_criacao_postagens']))."</td><td class='btn mn'><button value='".$postagens[$y]['id_postagens']."' class='alterar'>Alterar</button></td><td class='btn mn'><button value='".$postagens[$y]['id_postagens']."' class='excluir'>Excluir</button></td></tr>";
         }
 
         $pagAdm = 
             "<section id='pain-adm'>".
-                "<table>".
+                "<table id='tb1'>".
                     "<thead>".
                         "<tr><td colspan='3' class='tit'>Projetos</td><td class='btn' colspan='2'><button id='inp'>Criar nova postagem em projetos</button></td></tr>".
                         "<tr>".
@@ -33,7 +33,7 @@ class adm{
                         $postProjetos.
                     "</tbody>".
                 "</table>".
-                "<table>".
+                "<table id='tb2'>".
                     "<thead>".
                         "<tr><td colspan='3' class='tit'>Notícias</td><td class='btn' colspan='2'><button id='inn'>Criar nova postagem em noticias</button></td></tr>".
                         "<tr>".
@@ -80,7 +80,7 @@ class adm{
                 "function foi(){".
                     "alert('Ação concluida com sucesso');".
                     "$('#crud').hide();".
-                    "$('table').reload();".
+                    "location.reload();".
                 "}".
                 "$('#cancelar').click(function(envent){".
                     "event.preventDefault();".
@@ -89,13 +89,13 @@ class adm{
                 "$('#inp').click(function(event){".
                     "event.preventDefault();".
                     "$('#crud').show();".
-                    "$('#crud form h3').append('Inserir postagem em projetos.');".
+                    "$('#crud form h3').html('Inserir postagem em projetos.');".
                     "$('#salvar').val(2);".
                 "});".
                 "$('#inn').click(function(event){".
                     "event.preventDefault();".
                     "$('#crud').show();".
-                    "$('#crud form h3').append('Inserir postagem em notícias.');".
+                    "$('#crud form h3').html('Inserir postagem em notícias.');".
                     "$('#salvar').val(1);".
                 "});".
                 "$('#salvar').click(function(salva){".
@@ -113,20 +113,26 @@ class adm{
                         "}".
                     "}).done(foi());".
                 "});".
-
-                "function excluir(id){".
-                    "this.preventDefault();".
-                    "var r = confirm('Confirma a exclusão deste item?');".
-                    "if(r == true){".
+                "$('.excluir').click(function(ex){".
+                    "ex.preventDefault();".
                         "$.ajax({".
                             "method: 'post',".
                             "url: '".URLBASE."_funcPHP/_Ajax/excluir.php',".
                             "data:{".
-                                "ex : id".
+                                "excluir : $(this).val()".
                             "}".
                         "}).done(foi());".
-                    "}".
-                "}".
+                "});".
+                "$('.excluir').click(function(ex){".
+                    "ex.preventDefault();".
+                        "$.ajax({".
+                            "method: 'post',".
+                            "url: '".URLBASE."_funcPHP/_Ajax/excluir.php',".
+                            "data:{".
+                                "excluir : $(this).val()".
+                            "}".
+                        "}).done(foi());".
+                "});".
             "</script>";
         return $pagAdm;
     }

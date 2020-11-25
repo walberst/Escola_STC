@@ -119,7 +119,7 @@ class conteudoPost extends conexaoBD {
 
     public function excluiPost($id){
         try {
-            $sql = "delete from postagens_midias where fk_postagens = :id ;";
+            $sql = "delete from postagens where id_postagens = :id ;";
             $letsGo = $this->conect->prepare($sql);
             $letsGo->bindValue(":id",$id);
             return $letsGo->execute();
