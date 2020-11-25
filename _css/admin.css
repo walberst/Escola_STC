@@ -5,12 +5,12 @@
     font-family: 'Open-sans', sans-serif;
 }
 
-#login form {
+form {
     border: 1px solid #333;
     border-radius: 5px;
     padding: 20px;
     width: 300px;
-    height: 300px;
+    height: auto;
     background-color: #666;
     position: absolute;
     top: 50%;
@@ -22,12 +22,13 @@
     justify-content: center;
 }
 
-#login form h3 {
+form h3 {
     font-size: 25px;
     margin-bottom: 20px;
     color: #fff;
     text-align: center;
     justify-self: flex-start;
+    font-family: 'Open-sans', sans-serif;
 }
 
 .clabel {
@@ -49,11 +50,89 @@
     border: none;
 }
 
-#btn button {
+.btn button {
     padding: 10px 20px;
     background: #333;
     color: #fff;
     border: none;
     border-radius: 3px;
     cursor: pointer;
+}
+
+#pain-adm {
+    width: 100%;
+    display: flex;
+    flex-flow: row;
+    justify-content: center;
+}
+
+#pain-adm table {
+    width: 49%;
+    margin: 0 auto;
+    border: 1px solid #333;
+    margin-top: 30px;
+    border-collapse: collapse;
+    font-family: 'Open-sans', sans-serif;
+    height: 100%;
+}
+
+#pain-adm table tr td {
+    text-align: center;
+    margin-bottom: 2px;
+    height: 50px;
+}
+
+#pain-adm table tbody tr:hover {
+    background-color: #666;
+    color: #fff;
+}
+
+.tdid {
+    width: 2%;
+}
+
+.tdtt {
+    width: 40%;
+}
+
+.tddt {
+    width: 8%;
+}
+
+.mn {
+    width: 5%;
+    padding: 0 2px;
+}
+
+.tit {
+    font-size: 22px;
+    font-weight: bold;
+    border-bottom: 1px solid #333;
+}
+
+.crud {
+    width: 100vw;
+    height: 150%;
+    padding: 30px;
+    background-color: rgba(0, 0, 0, .5);
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 9999;
+    display: none;
+}
+
+.crud form {
+    width: 60%;
+    top: 50px;
+    left: 15%;
+    transform: translate(0, 0);
+}
+
+textarea {
+    height: 100px;
+}
+
+.crud form .btn button {
+    margin: 0 5px;
 }

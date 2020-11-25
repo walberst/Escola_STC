@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 #container {
     max-width: 1364px;
     width: 100%;
