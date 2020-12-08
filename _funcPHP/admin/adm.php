@@ -162,6 +162,7 @@ class adm{
                     "}).fail(function(xhr, status, error) {".
                         "console.log(xhr, status, error);".
                     "});".
+                    
                     "$('#salvar').click(function(event){".
                         "event.preventDefault();".
                         "$.ajax({".

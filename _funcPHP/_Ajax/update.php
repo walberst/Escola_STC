@@ -10,9 +10,9 @@ $tags = $_POST['tags'] == "" ? "sn": $_POST['tags'];
 
 $id = $_POST['ids'];
 $id = intval($id);
-$query = 'titulo_postagen = "'.$titulo.'", desc_postagens = "'.$desc.'", conteudo_postagens = "'.$cont.'" tags_postagens = "'.$tags.'" where id_postagens = '.$id.' ';
+//$query = 'titulo_postagen = "'.$titulo.'", desc_postagens = "'.$desc.'", conteudo_postagens = "'.$cont.'" tags_postagens = "'.$tags.'" where id_postagens = '.$id.' ';
 $status = "";
-if($alterar->bigUpdatePost($query,$id)){
+if($alterar->bigUpdatePost($titulo,$desc,$cont,$tags, $id)){
     $status .= "| ok |";
 }
 

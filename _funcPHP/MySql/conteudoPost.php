@@ -118,10 +118,15 @@ class conteudoPost extends conexaoBD {
         }
     }
     
-    public function bigUpdatePost($coluna){
+    public function bigUpdatePost($tpost, $dpost, $cpost, $tgpost, $id){
         try {
-            $sql = "update postagens set $coluna ;";
+            $sql = "update postagens set titulo_postagens = :tpost, desc_postagens = :dpost, conteudo_postagens = :cpost, tags_postagens = :tgpost where id_postagens = :id ;";
             $letsGo = $this->conect->prepare($sql);
+            $letsGo->bindValue(":tpost", $tpost);
+            $letsGo->bindValue(":dpost", $dpost);
+            $letsGo->bindValue(":cpost", $cpost);
+            $letsGo->bindValue(":tgpost", $tgpost);
+            $letsGo->bindValue(":id", $id);
             return $letsGo->execute();
         } catch (Exception $e) {
             echo $e->getMessage();
