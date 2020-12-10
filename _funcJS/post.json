@@ -1,1 +1,0 @@
-{"queryString":"SELECT * FROM postagens WHERE url_postagens = :url_postagens"}

@@ -50,140 +50,33 @@ class adm{
                 "</table>".
             "</section>".
             "<div class='crud' id='crud'>".
-                "<form action='' method='post'>".
+                "<form action='' method='post' enctype='multipart/form-data' id='evdata'>".
                     "<h3></h3>".
                     "<div class='clabel'>".
                         "<label for='titulo'>Titulo:</label>".
-                        "<input type='text' name='titulo' id='titulo'>".
+                        "<input type='text' name='titulo' id='titulo' required>".
                     "</div>".
                     "<div class='clabel'>".
                         "<label for='desc'>Descrição:</label>".
-                        "<textarea name='desc' id='desc'></textarea>".
+                        "<textarea name='desc' id='desc' required></textarea>".
                     "</div>".
                     "<div class='clabel'>".
                         "<label for='cont'>Conteudo:</label>".
-                        "<textarea name='cont' id='cont'></textarea>".
+                        "<textarea name='cont' id='cont' required></textarea>".
                     "</div>".
                     "<div class='clabel'>".
                         "<label for='tags'>Tags:</label>".
                         "<input type='text' name='tags' id='tags'>".
                     "</div>".
                     "<div class='clabel' id='img'>".
-                        "<label for='img'>Imagem:</label>".
-                        "<input type='file' name='img' id='img'>".
+                        "<label for='file'>Imagem:</label>".
+                        "<input type='file' name='file' id='file'>".
                     "</div>".
                     "<div class='btn'><button value='' id='salvar'>Salvar</button><button id='cancelar'>Cancelar</button></div>".
                 "</form>".
             "</div>".
             "<script src='https://code.jquery.com/jquery-3.5.1.min.js'></script>".
-            "<script>".
-                "function foi(){".
-                    "alert('Ação concluida com sucesso');".
-                    "$('#crud').hide();".
-                    "location.reload();".
-                "}".
-                "$('#cancelar').click(function(envent){".
-                    "event.preventDefault();".
-                    "$('#crud').hide();".
-                "});".
-                "$('#inp').click(function(event){".
-                    "event.preventDefault();".
-                    "$('#crud').show();".
-                    "$('#crud form h3').html('Inserir postagem em projetos.');".
-                    "$('#salvar').val(2);".
-                    "$('#salvar').click(function(salva){".
-                        "salva.preventDefault();".
-                        "$.ajax({".
-                            "method: 'post',".
-                            "url: '".URLBASE."_funcPHP/_Ajax/inserir.php',".
-                            "data:{".
-                                "titulo : $('#titulo').val(),".
-                                "desc : $('#desc').val(),".
-                                "cont : $('#cont').val(),".
-                                "tags : $('#tags').val(),".
-                                "img : $('#img').val(),".
-                                "categ : $('#salvar').val()".
-                            "}".
-                        "}).done(foi());".
-                    "});".
-                "});".
-
-                "$('#inn').click(function(event){".
-                    "event.preventDefault();".
-                    "$('#crud').show();".
-                    "$('#crud form h3').html('Inserir postagem em notícias.');".
-                    "$('#salvar').val(1);".
-                    "$('#salvar').click(function(salva){".
-                        "salva.preventDefault();".
-                        "$.ajax({".
-                            "method: 'post',".
-                            "url: '".URLBASE."_funcPHP/_Ajax/inserir.php',".
-                            "data:{".
-                                "titulo : $('#titulo').val(),".
-                                "desc : $('#desc').val(),".
-                                "cont : $('#cont').val(),".
-                                "tags : $('#tags').val(),".
-                                "img : $('#img').val(),".
-                                "categ : $('#salvar').val()".
-                            "}".
-                        "}).done(foi());".
-                    "});".
-                "});".
-
-                
-
-                "$('.excluir').click(function(ex){".
-                    "ex.preventDefault();".
-                        "$.ajax({".
-                            "method: 'post',".
-                            "url: '".URLBASE."_funcPHP/_Ajax/excluir.php',".
-                            "data:{".
-                                "excluir : $(this).val()".
-                            "}".
-                        "}).done(foi());".
-                "});".
-                "let id = '';".
-                "$('.alterar').click(function(al){".
-                    "id = $(this).val();".
-                    "$('#salvar').val($(this).val());".
-                    "al.preventDefault();".
-                    "$('#crud').show();".
-                    "$('#img').hide();".
-                    "$.ajax({".
-                        "method: 'post',".
-                        "dataType: 'json',".
-                        "url: '".URLBASE."_funcPHP/_Ajax/alterar.php',".
-                        "data: {id: $(this).val()},".
-                    "}).done(function(dado){".
-                        "$('#titulo').val(dado[0]['titulo_postagens']);".
-                        "$('#desc').val(dado[0]['desc_postagens']);".
-                        "$('#cont').val(dado[0]['conteudo_postagens']);".
-                        "$('#tags').val(dado[0]['tags_postagens']);".
-                    "}).fail(function(xhr, status, error) {".
-                        "console.log(xhr, status, error);".
-                    "});".
-                    
-                    "$('#salvar').click(function(event){".
-                        "event.preventDefault();".
-                        "$.ajax({".
-                            "method: 'post',".
-                            "url: '".URLBASE."_funcPHP/_Ajax/update.php',".
-                            "dataType: 'html',".
-                            "data:{".
-                                "titulo: $('#titulo').val(),".
-                                "desc: $('#desc').val(),".
-                                "cont: $('#cont').val(),".
-                                "tags: $('#tags').val(),".
-                                "ids: id".
-                            "}".
-                        "}).done(function(){".
-                            "".
-                        "}).fail(function(xhr, status, error) {".
-                            "console.log(xhr, status, error);".
-                        "});".
-                    "});".
-                "});".
-            "</script>";
+            "<script src='".URLBASE."_funcJS/Crud.js'></script>";
         return $pagAdm;
     }
 

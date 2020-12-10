@@ -11,6 +11,7 @@
 
 .pgc .titulo {
     width: 100vw;
+    height: 100px;
     display: flex;
     flex-direction: row;
     position: relative;
@@ -37,6 +38,7 @@
 }
 
 .pgc .titulo .gl {
+    display: none;
     position: absolute;
     right: 10%;
     top: 0%;

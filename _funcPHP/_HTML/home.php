@@ -78,7 +78,7 @@ class home{
 
             $imagens = explode(".", $categorias[$x]["caminho_midia"]);
             if(end($imagens) != "jpg"){
-                $categorias[$x]["caminho_midia"] = $imagens[0].".jpg";
+                $categorias[$x]["caminho_midia"] = $imagens[0];
             }
 
             if($categorias[$x]["capa_post"] != ""){
@@ -89,7 +89,7 @@ class home{
             }
             $listBox .= 
             "<div class='box-categ' id='".$categoria.$x."'>".
-                "<a href='".URLBASE.strtolower($categorias[$x]["nome_categoria"])."/".$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>".
+                "<a href='".URLBASE.$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>".
                     "<div class='img-categ'>".
                         "<img src='_midiasM/_imagensM/_w250/".$img."' alt='".$categorias[$x]["desc_postagens"]."'>".
                     "</div>".
@@ -98,7 +98,7 @@ class home{
                         "<p>".mb_strimwidth($categorias[$x]["desc_postagens"],0,350, "...")."</p>".
                     "</div>".
                     "<p class='data-post'><i class='flaticon-calendar'></i>".date("d/m/Y",strtotime($categorias[$x]["data_criacao_postagens"]))."</p>".
-                    "<a class = 'leia-mais' href='".URLBASE.strtolower($categorias[$x]["nome_categoria"])."/".$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>Leia mais...</a>".
+                    "<a class = 'leia-mais' href='".URLBASE.$categorias[$x]["url_postagens"]."' alt='".$categorias[$x]["desc_postagens"]."'>Leia mais...</a>".
                 "</a>".
             "</div>";
         }
